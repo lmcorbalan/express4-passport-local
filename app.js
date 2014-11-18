@@ -16,6 +16,7 @@ var flash        = require('express-flash');
 require('./utils/dbconnect');
 
 // DB Fixtures
+console.log(config.fixtures);
 if (config.fixtures && config.fixtures === "enabled") {
   // Load Fixtures
   require('./fixtures');

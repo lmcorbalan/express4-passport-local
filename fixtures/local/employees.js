@@ -1,3 +1,5 @@
+console.log('fixtures local');
+
 module.exports.Employees = [
     { nombre: 'Licha'    , age: 30 } ,
     { nombre: 'Pato'     , age: 30 } ,

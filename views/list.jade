@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1= title
+  //- p #{JSON.stringify(personas)}
+  //- p #{JSON.stringify(messages.info)}
+  - if ( messages.info )
+    .message.info
+      p= messages.info
+
+  hr
+
+  table.table.table-hover.table-condensed
+    thead
+      tr
+        th Nombre
+        th Edad
+        th Acciones
+    tbody
+      - employees.forEach( function (employee) {
+      tr
+        td.nombre=employee.name
+        td=employee.age
+        td
+          a( href="employees/delete/" + employee._id ) Borrar |
+          a( href="employees/edit/" + employee._id )  Editar
+      - } )

@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    title= title
+    block css
+      link(rel='stylesheet', href='/css/style.css')
+    //bower:css
+    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/components/font-awesome/css/font-awesome.css')
+    //endbower
+    block js
+      script(src='http://localhost:35729/livereload.js')
+  body
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') Staff's Wiki
+        #navbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            //- li.active
+            //-   a(href='/listar') Personas
+            //- li
+            //-   a(href='/p/new') Nueva Persona
+    .container
+      block content
+
+    //bower:js
+    script(src='/components/jquery/dist/jquery.js')
+    script(src='/components/bootstrap/dist/js/bootstrap.js')
+    //endbower

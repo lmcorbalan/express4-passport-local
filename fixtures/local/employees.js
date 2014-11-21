@@ -1,8 +1,6 @@
-console.log('fixtures local');
-
-module.exports.Employees = [
-    { nombre: 'Licha'    , age: 30 } ,
-    { nombre: 'Pato'     , age: 30 } ,
-    { nombre: 'Pajaro'   , age: 30 } ,
-    { nombre: 'Comadreja', age: 30 } ,
-];
+module.exports.Employees =
+  [ { name: 'Licha'    , age: 30 }
+  , { name: 'Pato'     , age: 30 }
+  , { name: 'Pajaro'   , age: 30 }
+  , { name: 'Comadreja', age: 30 }
+  ];

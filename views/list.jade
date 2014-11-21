@@ -5,8 +5,9 @@ block content
   //- p #{JSON.stringify(personas)}
   //- p #{JSON.stringify(messages.info)}
   - if ( messages.info )
-    .message.info
-      p= messages.info
+    div(class="alert alert-success" role="alert")=messages.info
+  - if ( messages.error )
+    div(class="alert alert-danger" role="alert")=messages.error
 
   hr
 
@@ -22,6 +23,13 @@ block content
         td.nombre=employee.name
         td=employee.age
         td
-          a( href="employees/delete/" + employee._id ) Borrar |
-          a( href="employees/edit/" + employee._id )  Editar
+          a#delete( href="employees/delete/" + employee._id data-name=employee.name ) Borrar |
+          a#edit( href="employees/edit/" + employee._id )  Editar
       - } )
+
+block js
+  script.
+    $('#delete').click( function (){
+      return confirm( 'Esta seguro que quiere borrar a ' + $('#delete').data("name") )
+    });
+

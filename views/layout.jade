@@ -10,8 +10,8 @@ html(lang='en')
     link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
     link(rel='stylesheet', href='/components/font-awesome/css/font-awesome.css')
     //endbower
-    block js
-      script(src='http://localhost:35729/livereload.js')
+
+    script(src='http://localhost:35729/livereload.js')
   body
     nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
       .container
@@ -24,10 +24,10 @@ html(lang='en')
           a.navbar-brand(href='#') Staff's Wiki
         #navbar.collapse.navbar-collapse
           ul.nav.navbar-nav
-            //- li.active
-            //-   a(href='/listar') Personas
-            //- li
-            //-   a(href='/p/new') Nueva Persona
+            li.active
+              a(href='/list') Personal
+            li
+              a(href='/employee/new') Nuevo Miembro
     .container
       block content
 
@@ -35,3 +35,5 @@ html(lang='en')
     script(src='/components/jquery/dist/jquery.js')
     script(src='/components/bootstrap/dist/js/bootstrap.js')
     //endbower
+
+    block js

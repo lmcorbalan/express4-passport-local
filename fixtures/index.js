@@ -8,14 +8,14 @@ console.log('fixtures', process.env.NODE_ENV )
 
 // And then override
 switch(process.env.NODE_ENV) {
-    case 'development':
-        fixtureLoader.load('./dev');
-    break;
-    case 'production':
-        fixtureLoader.load('./prod');
-    break;
-    default:
-        fixtureLoader.load('./local');
-        process.env.NODE_ENV = 'development';
-    break;
+  case 'development':
+    fixtureLoader.load('./dev');
+  break;
+  case 'production':
+    fixtureLoader.load('./prod');
+  break;
+  default:
+    fixtureLoader.load('./local');
+    process.env.NODE_ENV = 'development';
+  break;
 }

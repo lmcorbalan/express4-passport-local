@@ -2,15 +2,7 @@ extends layout
 
 block content
   h1= title
-  //- p #{JSON.stringify(personas)}
-  //- p #{JSON.stringify(messages.info)}
-  - if ( messages.info )
-    div(class="alert alert-success" role="alert")=messages.info
-  - if ( messages.error )
-    div(class="alert alert-danger" role="alert")=messages.error
-
   hr
-
   table.table.table-hover.table-condensed
     thead
       tr
@@ -23,13 +15,16 @@ block content
         td.nombre=employee.name
         td=employee.age
         td
-          a#delete( href="employees/delete/" + employee._id data-name=employee.name ) Borrar |
-          a#edit( href="employees/edit/" + employee._id )  Editar
+          a.action.delete( href="employee/delete/" + employee._id data-name=employee.name )
+            span.glyphicon.glyphicon-remove
+
+          a.action.edit( href="employee/edit/" + employee._id )
+            span.glyphicon.glyphicon-edit
       - } )
 
 block js
   script.
-    $('#delete').click( function (){
-      return confirm( 'Esta seguro que quiere borrar a ' + $('#delete').data("name") )
+    $('.delete').click( function (){
+      return confirm( 'Esta seguro que quiere borrar a ' + $('.delete').data("name") )
     });
 

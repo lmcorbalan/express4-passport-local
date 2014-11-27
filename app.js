@@ -9,6 +9,7 @@ var utils        = require('./utils');
 var config       = exports.config = require('./config');
 var session      = require('express-session')
 var flash        = require('express-flash');
+var passport     = exports.passport = require('passport');
 
 /**
 * Database Connection
@@ -40,8 +41,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public/components')));
 app.use(session({ secret: config.session.secret, resave: true, saveUninitialized: true }))
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 
+require('./auth/local-strategy');
+require('./routes/auth');
 require('./routes/main');
 
 /// catch 404 and forward to error handler
